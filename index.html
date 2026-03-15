@@ -133,8 +133,12 @@ footer p{font-size:.8rem;color:var(--muted)}
     <div class="section-label">Early Access</div>
     <div class="section-title" style="margin-left:auto;margin-right:auto">Be first to the edge.</div>
     <p class="section-sub" style="margin-left:auto;margin-right:auto">We're onboarding a limited group of early users ahead of the 2026 NFL season. No spam. Just signal.</p>
-    <form class="email-form" action="https://formspree.io/f/placeholder" method="POST">
+    <form class="email-form" action="https://formsubmit.co/ari.b.segal@gmail.com" method="POST">
       <input type="email" name="email" placeholder="you@email.com" required>
+      <input type="hidden" name="_subject" value="Fourth Down AI — New Waitlist Signup">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://fourthdownai.com?thanks=1">
+      <input type="hidden" name="_template" value="table">
       <button type="submit" class="btn btn-primary">Get Access</button>
     </form>
     <p class="form-note">Coming August 2026 · Free during beta</p>
@@ -148,18 +152,11 @@ footer p{font-size:.8rem;color:var(--muted)}
 </footer>
 
 <script>
-const form=document.querySelector('.email-form');
-form.addEventListener('submit',function(e){
-  e.preventDefault();
-  const btn=form.querySelector('button');
-  const input=form.querySelector('input');
-  btn.textContent='You\'re In ✓';
-  btn.style.background='var(--accent2)';
-  input.disabled=true;btn.disabled=true;
-  // Store email locally until Formspree is configured
-  console.log('Waitlist signup:',input.value);
-  setTimeout(()=>{btn.textContent='Get Access';btn.style.background='';input.disabled=false;btn.disabled=false;input.value='';},3000);
-});
+// Show thank you message if redirected back after signup
+if(window.location.search.includes('thanks=1')){
+  const form=document.querySelector('.email-form');
+  form.innerHTML='<p style="color:var(--accent);font-weight:600;font-size:1.1rem;padding:1rem 0">You\'re on the list ✓ We\'ll be in touch before draft season.</p>';
+}
 </script>
 </body>
 </html>
