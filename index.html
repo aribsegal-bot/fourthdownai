@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fourth Down AI — See What Others Miss</title>
+<meta name="description" content="AI-powered fantasy football projections and expert accountability. Proprietary ensemble models and alternative data signals. Early access coming Draft Season 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;--accent:#00e5a0;--accent2:#00c488;
+  --text:#e8e8ed;--muted:#8888a0;--border:#2a2a3a;--glow:rgba(0,229,160,.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-weight:800;font-size:1.1rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
+.logo span{color:var(--accent)}
+.logo-icon{width:28px;height:28px;border:2px solid var(--accent);border-radius:6px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;color:var(--accent)}
+nav a.cta-sm{font-size:.85rem;font-weight:600;padding:.5rem 1.25rem;border:1px solid var(--accent);border-radius:6px;transition:.2s}
+nav a.cta-sm:hover{background:var(--accent);color:var(--bg)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(0,229,160,.06) 0%,transparent 70%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;color:var(--accent);background:var(--glow);border:1px solid rgba(0,229,160,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:2rem;text-transform:uppercase;letter-spacing:.08em}
+.badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;max-width:800px;margin-bottom:1.5rem}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);max-width:580px;font-weight:300;margin-bottom:3rem}
+
+.cta-group{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{font-family:inherit;font-size:1rem;font-weight:600;padding:.85rem 2rem;border-radius:8px;border:none;cursor:pointer;transition:.25s}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 30px rgba(0,229,160,.25)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--muted)}
+
+.stats{display:flex;justify-content:center;gap:4rem;padding:4rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.stat{text-align:center}
+.stat-num{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em}
+
+section{padding:6rem 2rem}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.section-title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;max-width:600px}
+.section-sub{color:var(--muted);max-width:520px;margin-bottom:3rem}
+
+.pillars{max-width:1100px;margin:0 auto}
+.pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.pillar{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:.3s}
+.pillar:hover{border-color:rgba(0,229,160,.3);transform:translateY(-2px)}
+.pillar-icon{width:48px;height:48px;border-radius:10px;background:var(--glow);border:1px solid rgba(0,229,160,.15);display:grid;place-items:center;font-size:1.25rem;margin-bottom:1.25rem}
+.pillar h3{font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.pillar p{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+.early-access{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ea-inner{max-width:560px;margin:0 auto;text-align:center}
+.email-form{display:flex;gap:.75rem;margin-top:2rem}
+.email-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-family:inherit;font-size:.95rem;outline:none;transition:.2s}
+.email-form input:focus{border-color:var(--accent)}
+.email-form input::placeholder{color:var(--muted)}
+.email-form .btn{white-space:nowrap}
+.form-note{font-size:.75rem;color:var(--muted);margin-top:.75rem}
+
+footer{padding:3rem 2rem;text-align:center;border-top:1px solid var(--border)}
+footer .logo{justify-content:center;margin-bottom:1rem}
+footer p{font-size:.8rem;color:var(--muted)}
+
+@media(max-width:640px){
+  nav{padding:1rem 1.25rem}
+  .stats{gap:2rem;flex-wrap:wrap}
+  .email-form{flex-direction:column}
+  .pillar-grid{grid-template-columns:1fr}
+  section{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><div class="logo-icon">4D</div> Fourth Down <span>AI</span></div>
+  <a href="#access" class="cta-sm">Get Early Access</a>
+</nav>
+
+<section class="hero">
+  <div class="badge">Draft Season 2026</div>
+  <h1>See What <em>Others Miss</em></h1>
+  <p>AI-powered projection models and expert accountability analytics that surface hidden edge in fantasy football — before the crowd catches on.</p>
+  <div class="cta-group">
+    <a href="#access"><button class="btn btn-primary">Join the Waitlist</button></a>
+    <a href="#method"><button class="btn btn-ghost">How It Works</button></a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">62+</div><div class="stat-label">Prediction Features</div></div>
+  <div class="stat"><div class="stat-num">8yr</div><div class="stat-label">Walk-Forward Backtest</div></div>
+  <div class="stat"><div class="stat-num">r=.72</div><div class="stat-label">Correlation</div></div>
+</div>
+
+<section id="method">
+  <div class="pillars">
+    <div class="section-label">The Method</div>
+    <div class="section-title">Three pillars. One unfair advantage.</div>
+    <div class="section-sub">We don't just crunch box scores. We fuse unconventional data with rigorous quantitative methods to find signal where others see noise.</div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-icon">🤖</div>
+        <h3>AI Projection Engine</h3>
+        <p>Machine learning models trained on 62+ features — age curves, target competition, efficiency metrics, opportunity signals — with strict walk-forward backtesting across 8 NFL seasons.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔍</div>
+        <h3>Expert Accountability</h3>
+        <p>We grade every major fantasy analyst's historical accuracy by position, identify contrarian alpha, and expose who actually has edge vs. who's following the herd.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📡</div>
+        <h3>Alternative Data Signals</h3>
+        <p>Sentiment analysis, practice report parsing, weather correlations, and proprietary situational metrics that traditional platforms ignore entirely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="early-access" id="access">
+  <div class="ea-inner">
+    <div class="section-label">Early Access</div>
+    <div class="section-title" style="margin-left:auto;margin-right:auto">Be first to the edge.</div>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto">We're onboarding a limited group of early users ahead of the 2026 NFL season. No spam. Just signal.</p>
+    <form class="email-form" action="https://formspree.io/f/placeholder" method="POST">
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn btn-primary">Get Access</button>
+    </form>
+    <p class="form-note">Coming August 2026 · Free during beta</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><div class="logo-icon">4D</div> Fourth Down <span>AI</span></div>
+  <p>&copy; 2026 Fourth Down AI. All rights reserved.</p>
+  <p style="margin-top:.5rem"><a href="mailto:contact@fourthdownai.com" style="color:var(--muted);font-size:.8rem">contact@fourthdownai.com</a></p>
+</footer>
+
+<script>
+const form=document.querySelector('.email-form');
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=form.querySelector('button');
+  const input=form.querySelector('input');
+  btn.textContent='You\'re In ✓';
+  btn.style.background='var(--accent2)';
+  input.disabled=true;btn.disabled=true;
+  // Store email locally until Formspree is configured
+  console.log('Waitlist signup:',input.value);
+  setTimeout(()=>{btn.textContent='Get Access';btn.style.background='';input.disabled=false;btn.disabled=false;input.value='';},3000);
+});
+</script>
+</body>
+</html>
