@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Manifesto (V2) | Fourth Down AI</title>
+<meta name="description" content="Fourth Down AI: The Core Problem in Fantasy Football and Contrarian Alpha.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;--accent:#00e5a0;--accent2:#00c488;
+  --text:#e8e8ed;--muted:#8888a0;--border:#2a2a3a;--glow:rgba(0,229,160,.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-weight:800;font-size:1.1rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
+.logo span{color:var(--accent)}
+.logo-icon{width:28px;height:28px;border:2px solid var(--accent);border-radius:6px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;color:var(--accent)}
+nav a.cta-sm{font-size:.85rem;font-weight:600;padding:.5rem 1.25rem;border:1px solid var(--accent);border-radius:6px;transition:.2s}
+nav a.cta-sm:hover{background:var(--accent);color:var(--bg)}
+
+main{max-width:800px;margin:8rem auto 4rem;padding:0 2rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;color:var(--accent);background:var(--glow);border:1px solid rgba(0,229,160,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:2rem;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:2rem}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin:3rem 0 1.5rem;color:white;border-bottom:1px solid var(--border);padding-bottom:1rem}
+p{font-size:1.125rem;color:var(--text);margin-bottom:1.5rem;font-weight:300}
+ul{margin-bottom:2rem;padding-left:1.5rem}
+li{font-size:1.125rem;color:var(--muted);margin-bottom:1rem;font-weight:300}
+li strong{color:white;font-weight:600}
+.cta-box{margin-top:4rem;padding:3rem 2rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px;text-align:center}
+.btn{display:inline-block;font-family:inherit;font-size:1rem;font-weight:600;padding:.85rem 2rem;border-radius:8px;border:none;cursor:pointer;transition:.25s;text-decoration:none;margin-top:1rem}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 30px rgba(0,229,160,.25)}
+
+@media (max-width:600px){
+  nav{padding:1rem}
+  main{margin-top:6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-icon">4</div>
+    Fourth Down <span>AI</span>
+  </div>
+  <a href="index.html" class="cta-sm">Home</a>
+</nav>
+
+<main>
+  <div class="badge">Manifesto V2</div>
+  <h1>The Core Problem in Fantasy Football</h1>
+  
+  <p>The fantasy football landscape is saturated with content, but starved for truth. Millions of players consume rankings, projections, and advice daily, yet the industry suffers from three fundamental flaws:</p>
+
+  <ul>
+    <li><strong>Optimism Bias:</strong> Systems are implicitly trained to assume players hit their median-to-ceiling outcomes, consistently ignoring the reality of injury risk, coaching changes, and variance.</li>
+    <li><strong>Herd Mentality (The "Wisdom of the Crowds" Fallacy):</strong> When everyone aggregates the same expert opinions, the market becomes a giant echo chamber. Variations in rankings become minuscule, destroying the opportunity to find edge.</li>
+    <li><strong>Methodology Gaps:</strong> Traditional projections rely heavily on historical box scores and subjective adjustments. The failure to systematically account for structural shifts leaves traditional models blind to emerging trends.</li>
+  </ul>
+
+  <h2>The Exhaustive Market Landscape</h2>
+  <p>Currently, players have access to a sprawling but homogeneous set of resources:</p>
+  <ul>
+    <li><strong>The Mainstream Platforms:</strong> ESPN, Yahoo, CBS, Sleeper. These platforms provide basic projections that form the baseline of the market. They are the definition of "the herd."</li>
+    <li><strong>The Aggregators & Giants:</strong> FantasyPros, FantasyFootballAnalytics. They aggregate the market, smoothing out any unique insights and cementing the consensus.</li>
+    <li><strong>The Premium Mainstays:</strong> Draft Sharks, Footballguys, 4for4, numberFire. They offer solid, traditional analysis but often fall victim to the same methodology gaps.</li>
+    <li><strong>The Analytical & Prop-Driven:</strong> PFF, FantasyPoints, FTN, Subvertadown, and JJ Zachariason (Late-Round Fantasy Football). To be fair, there are pockets of rigorous, genuinely data-driven work in the industry—like Zachariason's prospect and draft guides—but the vast majority of the market still operates within the established, flawed paradigm of spreadsheet-based projections.</li>
+    <li><strong>The DFS & Niche Operators:</strong> DFS sites like RotoGrinders, Patreon creators, and specialized Dynasty sites. They cater to specific formats but rarely provide a unifying, structural advantage for redraft/best ball markets.</li>
+  </ul>
+  <p>In this vast sea of information, true edge is lost in the noise of consensus.</p>
+
+  <h2>Introducing: Contrarian Alpha</h2>
+  <p>To win, you cannot just follow the herd; you must know when the herd is wrong.</p>
+  <p>We introduce <strong>Contrarian Alpha</strong>, a new metric that fundamentally changes how we evaluate predictive accuracy. Contrarian Alpha doesn't just reward an expert or model for being right—it rewards them for being right <em>when the consensus is wrong</em>.</p>
+  <p>In fantasy drafts, value isn't created by correctly predicting that the consensus 1st overall pick will be good. Value is created by identifying the player the market hates who will actually break out, or the consensus top pick who will bust. Contrarian Alpha measures this exact phenomenon, isolating the rare sources of true draft value.</p>
+
+  <h2>The Fourth Down AI Solution</h2>
+  <p>At Fourth Down AI, we don't just build another projection model. We identify the structural inefficiencies of the market. While we cannot reveal our exact blueprint—our proprietary use of alternative data, advanced ensemble modeling, and unique architectural framework remain our secret weapon—our approach is designed specifically to capture <strong>Contrarian Alpha</strong>. We fade the noise, exploit the herd, and find the signal.</p>
+  <p>Welcome to Fourth Down AI. The consensus is dead.</p>
+
+  <div class="cta-box">
+    <h2>Join the Vanguard</h2>
+    <p style="color:var(--muted)">Ready to see what the herd is missing? We are currently onboarding a limited group of early access users to test our predictive models and access the expert accountability database before the 2026 draft season.</p>
+    <a href="index.html#waitlist" class="btn btn-primary">Join the Waitlist</a>
+  </div>
+</main>
+
+</body>
+</html>
