@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Rookie Breakout Translation Guide</title>
+<meta name="description" content="Fourth Down AI's mathematical framework for predicting rookie breakouts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;--accent:#00e5a0;--accent2:#00c488;
+  --text:#e8e8ed;--muted:#8888a0;--border:#2a2a3a;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem;}
+.container { max-width: 800px; margin: 0 auto; background: var(--bg2); padding: 4rem; border-radius: 12px; border: 1px solid var(--border); }
+h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; color: #fff; }
+h2 { font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--accent); }
+h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem; color: #fff; }
+p { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+.metric { background: var(--bg3); border-left: 4px solid var(--accent); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+.metric-title { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; display: block; }
+.case-study { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 3rem; }
+.case-study-header { background: var(--bg3); padding: 1rem 1.5rem; font-weight: 700; color: #fff; border-bottom: 1px solid var(--border); }
+.case-study-body { padding: 1.5rem; background: rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+<div class="container">
+    <div style="font-family: 'JetBrains Mono'; color: var(--accent); margin-bottom: 2rem; font-weight: 700;">FOURTH DOWN AI // DATA INTEL</div>
+    <h1>2026 Rookie Breakout Translation Guide</h1>
+    <p>Humans suck at evaluating rookies because they overweigh NFL Draft Capital and media hype. Our XGBoost model ignores the noise and isolates the structural college production metrics that actually translate to NFL fantasy success.</p>
+    
+    <h2>The 3 Predictive Pillars of the Rookie Engine</h2>
+    <p>If a player hits all three of these benchmarks, their hit rate at the NFL level skyrockets—regardless of whether they were drafted in the 1st round or the 5th round.</p>
+    
+    <div class="metric">
+        <span class="metric-title">1. YPTPA (Yards Per Team Pass Attempt)</span>
+        <p>The ultimate efficiency metric. We take a player's receiving yards and divide it by the total pass attempts their college team made while they were on the field. It proves whether a player was the engine of the offense. <strong>Elite Threshold: >3.0</strong></p>
+    </div>
+    
+    <div class="metric">
+        <span class="metric-title">2. Dominator Rating</span>
+        <p>The percentage of their team's total receiving yards and touchdowns the player accounted for. If you can't dominate college cornerbacks, you won't dominate the NFL. <strong>Elite Threshold: >30%</strong></p>
+    </div>
+
+    <div class="metric">
+        <span class="metric-title">3. Breakout Age</span>
+        <p>The exact age a player first achieved a 20%+ Dominator Rating. Players who break out at 18 or 19 years old have vastly superior NFL hit rates compared to late-bloomers who beat up on younger players when they were 22. <strong>Elite Threshold: <19.5 Years Old</strong></p>
+    </div>
+
+    <div class="case-study">
+        <div class="case-study-header">CASE STUDY: The Puka Nacua Mathematical Miss</div>
+        <div class="case-study-body">
+            <p>In 2023, the industry completely missed Puka Nacua because they anchored to his 5th-round draft capital. Our math flagged him as a screaming value:</p>
+            <p style="font-family: 'JetBrains Mono'; font-size: 0.9rem; color: #fff;">
+                Dominator Rating: 36.4%<br>
+                YPTPA: 3.52 (Astronomical)<br>
+                Breakout Age: 19.3
+            </p>
+            <p>When he was on the field at BYU, he was the entire offense. The math ignored the draft capital and found the alpha.</p>
+        </div>
+    </div>
+
+    <div class="case-study">
+        <div class="case-study-header">2026 PREVIEW: The "Year 2 Leap" Target</div>
+        <div class="case-study-body">
+            <p>Based on this exact formula, the biggest sleeper sitting in the NFL right now is <strong>Xavier Legette (CAR)</strong>. He had a quiet rookie year, so his ADP is dead. But look at his underlying college math:</p>
+            <p style="font-family: 'JetBrains Mono'; font-size: 0.9rem; color: #fff;">
+                Dominator Rating: 35.0%<br>
+                YPTPA: 3.15<br>
+                Breakout Age: Late, but adjusted for scheme context
+            </p>
+            <p>If the Panthers offense takes even a half-step forward, his talent profile is massively underpriced right now.</p>
+        </div>
+    </div>
+    
+    <h2>Next Steps</h2>
+    <p>You are officially on the <strong>Fourth Down AI</strong> insider list. Keep an eye on your inbox. When the full 2026 Draft Board and Master Projection Engine goes live this summer, you'll be the first to know.</p>
+</div>
+</body>
+</html>
