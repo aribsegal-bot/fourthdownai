@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 10-Year Audit | Fourth Down AI</title>
+<meta name="description" content="The definitive 10-year audit of fantasy football expert accuracy. See who actually knows ball.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;--accent:#00e5a0;--accent2:#00c488;
+  --danger:#ff4a4a; --danger-glow:rgba(255,74,74,0.15);
+  --gold:#ffd700; --gold-glow:rgba(255,215,0,0.15);
+  --text:#e8e8ed;--muted:#8888a0;--border:#2a2a3a;--glow:rgba(0,229,160,.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:0.2s}
+a:hover{color:var(--accent2)}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-weight:800;font-size:1.1rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem; color:var(--text);}
+.logo span{color:var(--accent)}
+.logo-icon{width:28px;height:28px;border:2px solid var(--accent);border-radius:6px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;color:var(--accent)}
+nav a.cta-sm{font-size:.85rem;font-weight:600;padding:.5rem 1.25rem;border:1px solid var(--accent);border-radius:6px;transition:.2s}
+nav a.cta-sm:hover{background:var(--accent);color:var(--bg)}
+
+.hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.leaderboard-container {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg2);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+th, td {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    background: var(--bg3);
+}
+
+td {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.rank {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    width: 60px;
+    text-align: center;
+}
+
+.alpha-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+}
+
+.row-gold {
+    background: var(--gold-glow);
+}
+.row-gold td {
+    color: var(--gold);
+}
+.row-gold .rank { color: var(--gold); }
+
+.row-danger {
+    background: var(--danger-glow);
+}
+.row-danger td.expert-name {
+    color: var(--danger);
+}
+.row-danger .alpha-score {
+    color: var(--danger);
+}
+
+.row-positive .alpha-score { color: var(--accent); }
+.row-negative .alpha-score { color: var(--muted); }
+
+.footer-nav {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">4</div>
+    Fourth Down AI <span>&bull;</span>
+  </a>
+  <a href="/leaderboard.html" class="cta-sm">Accountability Board</a>
+</nav>
+
+<div class="hero">
+    <h1>The 10-Year Audit</h1>
+    <p>A decade of Expert Consensus Rankings (ECR) vs. Reality. We use Confidence-Adjusted Accuracy (CaaS) to find who actually adds value.</p>
+</div>
+
+<div class="leaderboard-container">
+    <table>
+        <thead>
+            <tr>
+                <th class="rank">Rank</th>
+                <th>Expert / Platform</th>
+                <th>CaaS (Alpha)</th>
+                <th>Audit Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row-gold">
+                <td class="rank">1</td>
+                <td class="expert-name">Charlie Campbell (WalterFootball)</td>
+                <td class="alpha-score">+82.75</td>
+                <td>10 Seasons</td>
+            </tr>
+            <tr class="row-positive">
+                <td class="rank">2</td>
+                <td class="expert-name">Jorge B. Edwards (FantasyPros)</td>
+                <td class="alpha-score">+30.11</td>
+                <td>6 Seasons</td>
+            </tr>
+            <tr class="row-positive">
+                <td class="rank">3</td>
+                <td class="expert-name">Jeff Boggis (FantasyPros)</td>
+                <td class="alpha-score">+23.71</td>
+                <td>6 Seasons</td>
+            </tr>
+            <tr class="row-positive">
+                <td class="rank">4</td>
+                <td class="expert-name">Dalton Del Don (Yahoo/FP)</td>
+                <td class="alpha-score">+18.84</td>
+                <td>6 Seasons</td>
+            </tr>
+            <tr class="row-positive">
+                <td class="rank">5</td>
+                <td class="expert-name">Liz Loza</td>
+                <td class="alpha-score">+10.91</td>
+                <td>4 Seasons</td>
+            </tr>
+            <tr class="row-danger">
+                <td class="rank">19</td>
+                <td class="expert-name">Matthew Berry (ESPN)</td>
+                <td class="alpha-score">-20.09</td>
+                <td>7 Seasons</td>
+            </tr>
+            <tr class="row-danger">
+                <td class="rank">20</td>
+                <td class="expert-name">Mike Wright (Fantasy Footballers)</td>
+                <td class="alpha-score">-26.97</td>
+                <td>3 Seasons</td>
+            </tr>
+            <tr class="row-danger">
+                <td class="rank">21</td>
+                <td class="expert-name">Andy Holloway (Fantasy Footballers)</td>
+                <td class="alpha-score">-32.54</td>
+                <td>3 Seasons</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer-nav">
+    <p>Looking for the 3-year performance tracker? <a href="/leaderboard.html">View Accountability Leaderboard</a></p>
+</div>
+
+</body>
+</html>
